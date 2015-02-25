@@ -1,0 +1,27 @@
+
+
+extends layout
+
+block content
+
+	div.container
+		ul.nav.nav-pills
+			li.active(role='presentation')
+				a(href='#') Home
+
+			li(role='presentation')
+				a(href='#') Translation
+
+			li(role='presentation')
+				a(href='#') Quiz
+
+
+		h1 Translation
+
+			div
+			form.translate-form
+				input.lang-from(name='lang-from',type='text',placeholder='Original Language')
+				input.lang-to(name='lang-to',type='text',placeholder='Target Language')
+
+			p#message-lang-from
+			p#message-lang-to

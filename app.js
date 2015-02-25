@@ -13,8 +13,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', indexController.index);
-app.get('/translate');
-app.post('/translate');
+app.get('/translate', indexController.translatePageLaunch);
+app.post('/translate', indexController.translate);
 
 var server = app.listen(9348, function() {
 	console.log('Express server listening on port ' + server.address().port);

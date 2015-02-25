@@ -1,4 +1,4 @@
-var Beglobal = require('node-beglobal');
+
 
 var data = {
 
@@ -8,4 +8,4 @@ var data = {
 
 }; //data
 
-module.exports=
+//module.exports=

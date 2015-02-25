@@ -1,3 +1,5 @@
+// SERVER SIDE CODE
+
 var BeGlobal = require('node-beglobal');
 // var request=require('request');
 
@@ -9,26 +11,31 @@ var beglobal = new BeGlobal.BeglobalAPI({
 var indexController = {
 	index: function(req, res) {
 		res.render('index');
+	},
+
+	translatePageLaunch: function(req,res){
+		res.render('translate');
+	},
+
+	translate: function(req, res){
+
+		beglobal.translations.translate(
+		  {text: 'hello', from: 'eng', to: 'fra'},
+		  function(err, results) {
+		    if (err) {
+		      return console.log(err);
+		    }
+		    console.log(results);
+		    console.log('hello');
+		  }
+		);	
+		res.redirect('translate');		
+		//console.log(req.body);
 	}
-	// request: function(req,res){
-	// 	method: 'POST',
-	// 	url: 'https://lc-api.sdl.com/translate',
-	// 	headers:{
-	// 		Content-type: 'application/json',
-	// 		Accept: 'application/json',
-	// 		// api key
-	// 		Authorization: 'LC apiKey=P4rNc4%2BJ7UuKxbeSPGgdXA%3D%3D'
-	// 	},
-	// 	body: JSON.stringify({
-	// 		to: 'fra',
-	// 		from: 'eng',
-	// 		text: 'hello how are you?'
-	// 	}),
-	// 	json: true
-	// 	}, 
-	// 	function(err,response, body){
-	// 		console.log(body.translation);  // bonjour
-	// 	});
+
+
+
+
 
 
 }; // indexController
